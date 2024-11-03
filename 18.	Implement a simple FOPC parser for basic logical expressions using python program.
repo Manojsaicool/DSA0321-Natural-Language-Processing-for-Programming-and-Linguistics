@@ -1,0 +1,14 @@
+import nltk
+from nltk import CFG,ChartParser
+grammar=("""
+       S -> EXPR
+       EXPR -> PRED | EXPR 'AND' EXPR | EXPR 'OR' EXPR
+       PRED -> NAME '('VARS')'
+       VARS -> VAR | VAR ',' VARS
+       NAME -> 'P'|'Q'|'R'
+       VAR -> 'x'|'y'|'z'
+""")
+paser=ChartParser(CFG.fromstring(grammar))
+for expr in ["P(x,y)","Q(x) AND R(y,z)","P(x) OR Q(y) AND R(z)" ]:
+  for tree in parser.parse(expr.replace('(', ' ( ').replace(')', ' ) ').replace(',', ' , ').split()):
+    tree.pretty_print()
