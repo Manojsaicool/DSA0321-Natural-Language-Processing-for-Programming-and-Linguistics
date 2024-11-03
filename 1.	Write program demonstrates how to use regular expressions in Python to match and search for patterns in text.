@@ -1,0 +1,15 @@
+import re
+text1='DSA0311-Natural Learing Porcessing'
+text2='Dsa0311-Natural Learing'
+word='Natural Learing Porcessing'
+pattern=fr'\b{word}\b'
+match1=re.search(pattern,text1)
+if match1:
+  print("found the text")
+else:
+  print("not found ")
+match2=re.search(pattern,text2)
+if match2:a
+  print("found the text")
+else:
+  print("not found ")
