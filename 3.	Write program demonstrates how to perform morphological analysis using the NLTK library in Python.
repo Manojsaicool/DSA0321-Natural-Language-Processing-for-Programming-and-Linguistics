@@ -1,0 +1,7 @@
+import nltk
+from nltk.tokenize import word_tokenize
+nltk.download('punkt')
+text = "Hi,How Are You."
+tokens = word_tokenize(text)
+print("Word Tokens:")
+print(tokens)
